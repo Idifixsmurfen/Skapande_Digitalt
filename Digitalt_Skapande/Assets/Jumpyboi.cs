@@ -10,7 +10,7 @@ public class Jumpyboi : MonoBehaviour
     int EttTillNamn;               //Antal hopp
     public LayerMask GeDenEttNamn; //Vad är mark
     public float EttTillNyttNamn;  //Röresle, sidled
-    bool InteFacingRight;           //Facing Right
+    bool InteFacingRight;          //Facing Right
         
     
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class Jumpyboi : MonoBehaviour
         if (Physics2D.OverlapCircle(new Vector3(0,-1,0)+transform.position,0.2f,GeDenEttNamn)&&SkrivEttNamn.velocity.y<=1)
         {
             EttTillNamn = 2;
-            Debug.Log("SkrivNågot,VadSomHellst");
+
         }
         if ((Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.W)) && EttTillNamn>0) 
         {
@@ -34,10 +34,10 @@ public class Jumpyboi : MonoBehaviour
             EttTillNamn--;
 
         }
-        SkrivEttNamn.velocity = new Vector2(Input.GetAxis("Horizontal") * EttTillNyttNamn, SkrivEttNamn.velocity.y);
-        if (true)
+       
+        if (EttTillNamn == 2)//;)
         { 
-        
+         SkrivEttNamn.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * EttTillNyttNamn, SkrivEttNamn.velocity.y);
         }
 
     }
