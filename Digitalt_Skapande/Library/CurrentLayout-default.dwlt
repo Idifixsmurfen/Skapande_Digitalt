@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 17474
+  controlID: 1967
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 17475
+  controlID: 1968
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 17476
+  controlID: 1974
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 17477
+  controlID: 1975
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -342,6 +342,7 @@ MonoBehaviour:
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
   m_MaximizeOnPlay: 1
+  m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -423,9 +424,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ec480000
+      m_SelectedIDs: 0a3b0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 6afbffff
+      m_ExpandedIDs: 1ef9ffff86faffffe8380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -485,9 +486,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.5300345, y: 1.3423603, z: -123.22999}
+    m_Target: {x: -2.826482, y: -3.1092975, z: -128.93274}
     speed: 2
-    m_Value: {x: -1.5300345, y: 1.3423603, z: -123.22999}
+    m_Value: {x: -1.8979542, y: -3.189939, z: -128.8767}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -537,9 +538,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.95844
+    m_Target: 14.864649
     speed: 2
-    m_Value: 15.95844
+    m_Value: 15.565077
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -592,7 +593,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 14502
+  m_LastSelectedObjectID: -1920
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -722,20 +723,20 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Audio
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets
+  - Assets/Audio
   m_LastFoldersGridSize: 60
-  m_LastProjectPath: C:\Users\Walter\Documents\GitHub\Skapande_Digitalt\Digitalt_Skapande
+  m_LastProjectPath: C:\Users\melvi\OneDrive\Dokument\GitHub\Skapande_Digitalt\Digitalt_Skapande
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f6380000
-    m_LastClickedID: 14582
-    m_ExpandedIDs: 00000000f638000000ca9a3b
+    m_SelectedIDs: 7a390000
+    m_LastClickedID: 14714
+    m_ExpandedIDs: 000000005439000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -763,7 +764,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f638000000ca9a3b
+    m_ExpandedIDs: 000000005439000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -882,7 +883,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 0
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -909,8 +910,8 @@ MonoBehaviour:
     height: 926
   m_ViewDataDictionary: {fileID: 0}
   m_ResetOnNextRepaint: 0
-  m_SelectedAssetPath: Assets/unknown.png
-  m_SelectedSpriteRectGUID: 5e97eb03825dee720800000000000000
+  m_SelectedAssetPath: 
+  m_SelectedSpriteRectGUID: 00000000000000000000000000000000
   m_LastUsedModuleTypeName: UnityEditor.U2D.Sprites.SpriteFrameModule
 --- !u!114 &23
 MonoBehaviour:
