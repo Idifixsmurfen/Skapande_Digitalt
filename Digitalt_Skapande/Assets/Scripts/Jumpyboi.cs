@@ -35,10 +35,10 @@ public class Jumpyboi : MonoBehaviour
 
         }
        
-        if (EttTillNamn == 2)//;)
-        { 
+        //if (EttTillNamn == 2)//;)
+        //{ 
          SkrivEttNamn.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * EttTillNyttNamn, SkrivEttNamn.velocity.y);
-        }
+        //}
 
     }
     void flip()

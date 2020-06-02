@@ -134,4 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbodi: {fileID: 4780319547885303160}
-  FoV: 69
+  FoV: 4.2069
+  BlueStuff: 1.6942
