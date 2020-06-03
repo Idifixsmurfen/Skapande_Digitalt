@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DaManagér : MonoBehaviour
 {
+    public int levelID;
     GameObject Frog;
     void Start()
     {
@@ -14,9 +16,27 @@ public class DaManagér : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            goBack();
+            return;
+        }
         if (!Frog&&Input.anyKey) 
         {
-            CEO_Bob_Bobson.ceo.YouKindaBadTho();
-        }   
+            YouKindaBadTho();
+        }
+        if (GameObject.FindGameObjectsWithTag("bois").Length == 0 && levelID > levelmanager.clearedLevels)
+        {
+            levelmanager.clearedLevels = GameObject.FindGameObjectsWithTag("bois").Length;
+            goBack();
+        }
+    }
+    public void goBack()
+    {
+        SceneManager.LoadScene("level_select");
+    }
+    public void YouKindaBadTho()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -5539928101392318547}
   m_Layer: 0
   m_Name: bois
-  m_TagString: Untagged
+  m_TagString: bois
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
