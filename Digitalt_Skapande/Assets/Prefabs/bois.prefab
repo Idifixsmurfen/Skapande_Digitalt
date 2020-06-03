@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4780319547885303164}
   - component: {fileID: 947716169416281977}
   - component: {fileID: 1814477104796242172}
+  - component: {fileID: -5539928101392318547}
   m_Layer: 0
   m_Name: bois
   m_TagString: Untagged
@@ -135,6 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33505b99352fb24086257853d713a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaunchFly: 10
+  LaunchFrog: 20
   vision: 6.9
   baseSpeed: 15
 --- !u!95 &947716169416281977
@@ -252,3 +255,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5539928101392318547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780319547885303163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5106c6ade205a994fb9232f0279df7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hellth: 1

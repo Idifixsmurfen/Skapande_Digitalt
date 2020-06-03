@@ -7,7 +7,10 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
     Rigidbody2D thisRB;
     Transform target;
     AudioSource thisAS;
+    Helth YouDeadYet;
 
+    public float LaunchFly;
+    public float LaunchFrog;
     public float vision; 
     public float baseSpeed; 
 
@@ -18,6 +21,7 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
     {
         thisRB = GetComponent<Rigidbody2D>();
         thisAS = GetComponent<AudioSource>();
+        YouDeadYet = GetComponent<Helth>();
         Invoke("enableAnim",Random.Range(0,0.5f));
         if (GameObject.Find("Frog"))
         {
@@ -73,4 +77,29 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
     {
         GetComponent<Animator>().enabled = true;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Vector2 SchmackPosition = collision.GetContact(0).point;
+            Vector2 Direction =(Vector2) transform.position - SchmackPosition;
+            Direction.Normalize();
+            Direction *= LaunchFly;
+            thisRB.velocity = Direction;
+            if (SchmackPosition.y -0.2f> transform.position.y) //;
+            {
+                YouDeadYet.Hellth--;
+                collision.gameObject.GetComponent<Rigidbody2D>().velocity=new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x,LaunchFrog) ;
+
+            }
+            else //()
+            {
+                collision.gameObject.GetComponent<Helth>().Hellth--;
+                
+            }
+
+        }
+    }
+
 }

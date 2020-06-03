@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 622316314074760062}
   - component: {fileID: 622316314074759937}
   - component: {fileID: 622316314074760061}
+  - component: {fileID: -6405700423686695774}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Player
@@ -134,8 +135,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkrivEttNamn: {fileID: 622316314074759937}
-  EttNyttNamn: 13
+  EttNyttNamn: 18
   GeDenEttNamn:
     serializedVersion: 2
     m_Bits: 256
-  EttTillNyttNamn: 6
+  EttTillNyttNamn: 5
+--- !u!114 &-6405700423686695774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622316314074759936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5106c6ade205a994fb9232f0279df7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hellth: 3

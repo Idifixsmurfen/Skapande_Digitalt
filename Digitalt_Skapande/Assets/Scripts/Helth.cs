@@ -15,7 +15,10 @@ public class Helth : MonoBehaviour
     
     void Update()
     {
-        
+        if (Hellth <= 0)
+        {
+            HeavenOrHell();
+        }
     }
 
 
