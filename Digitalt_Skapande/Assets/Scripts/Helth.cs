@@ -19,6 +19,12 @@ public class Helth : MonoBehaviour
         {
             HeavenOrHell();
         }
+        if (transform.position.y <= -50)
+        {
+            HeavenOrHell();
+        }
+
+
     }
 
 
@@ -26,4 +32,5 @@ public class Helth : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 }
