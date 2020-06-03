@@ -10,36 +10,60 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
     public float BlueStuff;   //Speed
     Vector2 Where_you_goin; //direction
     float RandomNumber = 0;
+    bool FacingRight = true;
     void Start()
     {
-        Kun_coordinates = GameObject.Find("Frog").transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-
-    {
-        if (Vector2.Distance(transform.position, Kun_coordinates.position) < FoV) 
+        Invoke("enableAnim",Random.Range(0,0.5f));
+        if (GameObject.Find("Frog"))
         {
-            Where_you_goin = Kun_coordinates.position - transform.position;
-           
-            RandomNumber = 0;
+            Kun_coordinates = GameObject.Find("Frog").transform;
         } 
+    }
+    void Update()
+    {
+        float speed = BlueStuff;
+        if (Kun_coordinates)
+        {
+            if (Vector2.Distance(transform.position, Kun_coordinates.position) < FoV)
+            {
+                Where_you_goin = Kun_coordinates.position - transform.position;
+                speed *= 2;
+                RandomNumber = 0;
+            }
+            else
+            {
+                Invoke("ChangeDirection", RandomNumber);
+            }
+        }
         else
         {
             Invoke("ChangeDirection", RandomNumber);
-
         } 
-        
         Where_you_goin.Normalize();
         Where_you_goin *= BlueStuff;
-        Rigidbodi.velocity = new Vector2(Where_you_goin.x, Where_you_goin.y);
+        Rigidbodi.AddForce(Where_you_goin * speed * Time.deltaTime);
+        Rigidbodi.AddTorque(-transform.rotation.z / 2f);
+        flip();
     }
     void ChangeDirection()
     {
         CancelInvoke("ChangeDirection");
-        Debug.Log("?");
-        RandomNumber = Random.Range(0.5f, 3f);
+        RandomNumber = Random.Range(0f, 1f);
         Where_you_goin = Random.insideUnitCircle;
+    }
+    void flip()
+    {
+        float horizontalInput = Rigidbodi.velocity.x;
+        if (horizontalInput > 0f && !FacingRight || horizontalInput < -0f && FacingRight)
+        {
+            FacingRight = !FacingRight;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
+    }
+    void enableAnim()
+    {
+        GetComponent<Animator>().enabled = true;
     }
 }

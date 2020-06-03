@@ -5,18 +5,22 @@ using UnityEngine;
 public class Player_tracking_sponsored_by_NSA : MonoBehaviour
 {
     Transform PlayerTransform;
+    public Vector3 offset;
+    public float smoothness;
     void Start()
     {
-     PlayerTransform = GameObject.Find("Frog").transform;
+        if (GameObject.Find("Frog"))
+        {
+            PlayerTransform = GameObject.Find("Frog").transform;
+        }
     }
-
-
-    void Update()
+    void LateUpdate()
     {
-        Vector3 Clay = transform.position + new Vector3(0, 0, 10) ;  //Kamera som ändras
-
-        Clay = Vector3.Lerp(Clay, PlayerTransform.position, 0.15f);
-        Clay += new Vector3(0, 0, -10);
-        transform.position = Clay;
+        if (PlayerTransform)
+        {
+            Vector3 clay = PlayerTransform.position + offset;
+            Vector3 smoothedClay = Vector3.Lerp(transform.position, clay, smoothness * Time.deltaTime);
+            transform.position = smoothedClay;
+        }
     }
 }

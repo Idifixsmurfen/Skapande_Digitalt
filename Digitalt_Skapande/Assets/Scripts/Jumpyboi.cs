@@ -5,21 +5,17 @@ using UnityEngine;
 
 public class Jumpyboi : MonoBehaviour
 {
-   public Rigidbody2D SkrivEttNamn;//Referens till rigid body
+    public Rigidbody2D SkrivEttNamn;//Referens till rigid body
     public float EttNyttNamn;      //Rörelse, upp
     int EttTillNamn;               //Antal hopp
     public LayerMask GeDenEttNamn; //Vad är mark
     public float EttTillNyttNamn;  //Röresle, sidled
     bool InteFacingRight;          //Facing Right
         
-    
-    // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         flip();
@@ -34,17 +30,12 @@ public class Jumpyboi : MonoBehaviour
             EttTillNamn--;
 
         }
-       
-        //if (EttTillNamn == 2)//;)
-        //{ 
-         SkrivEttNamn.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * EttTillNyttNamn, SkrivEttNamn.velocity.y);
-        //}
-
+        SkrivEttNamn.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * EttTillNyttNamn, SkrivEttNamn.velocity.y);
     }
     void flip()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput > 0.35f && !InteFacingRight || horizontalInput < -0.35f && InteFacingRight)
+        if (horizontalInput > 0 && !InteFacingRight || horizontalInput < -0 && InteFacingRight)
         {
             InteFacingRight = !InteFacingRight;
             Vector3 theScale = transform.localScale;
