@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
 {
-    public Rigidbody2D Rigidbodi;//Referens till rigid body
-    Transform Kun_coordinates; //player cords
-    public float FoV; //field of view
-    public float BlueStuff;   //Speed
-    Vector2 Where_you_goin; //direction
+    Rigidbody2D thisRB;
+    Transform target;
+    AudioSource thisAS;
+
+    public float vision; 
+    public float baseSpeed; 
+
+    Vector2 direction;
     float RandomNumber = 0;
     bool FacingRight = true;
     void Start()
     {
+        thisRB = GetComponent<Rigidbody2D>();
+        thisAS = GetComponent<AudioSource>();
         Invoke("enableAnim",Random.Range(0,0.5f));
         if (GameObject.Find("Frog"))
         {
-            Kun_coordinates = GameObject.Find("Frog").transform;
+            target = GameObject.Find("Frog").transform;
         } 
     }
     void Update()
     {
-        float speed = BlueStuff;
-        if (Kun_coordinates)
+        float speed = baseSpeed;
+        float distanceToTarget = Vector2.Distance(transform.position, target.position);
+        if (target)
         {
-            if (Vector2.Distance(transform.position, Kun_coordinates.position) < FoV)
+            if (distanceToTarget < vision)
             {
-                Where_you_goin = Kun_coordinates.position - transform.position;
-                speed *= 2;
+                direction = target.position - transform.position;
+                speed *= 1.7f;
                 RandomNumber = 0;
             }
             else
@@ -38,22 +44,23 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
         else
         {
             Invoke("ChangeDirection", RandomNumber);
-        } 
-        Where_you_goin.Normalize();
-        Where_you_goin *= BlueStuff;
-        Rigidbodi.AddForce(Where_you_goin * speed * Time.deltaTime);
-        Rigidbodi.AddTorque(-transform.rotation.z / 2f);
+        }
+        thisAS.volume = 1 / distanceToTarget;
+        direction.Normalize();
+        direction *= baseSpeed;
+        thisRB.AddForce(direction * speed * Time.deltaTime);
+        thisRB.AddTorque(-transform.rotation.z / 2f);
         flip();
     }
     void ChangeDirection()
     {
         CancelInvoke("ChangeDirection");
         RandomNumber = Random.Range(0f, 1f);
-        Where_you_goin = Random.insideUnitCircle;
+        direction = Random.insideUnitCircle;
     }
     void flip()
     {
-        float horizontalInput = Rigidbodi.velocity.x;
+        float horizontalInput = thisRB.velocity.x;
         if (horizontalInput > 0f && !FacingRight || horizontalInput < -0f && FacingRight)
         {
             FacingRight = !FacingRight;
