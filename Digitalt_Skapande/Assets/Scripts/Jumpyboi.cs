@@ -7,7 +7,8 @@ public class Jumpyboi : MonoBehaviour
 {
     public Rigidbody2D SkrivEttNamn;//Referens till rigid body
     public float EttNyttNamn;      //Rörelse, upp
-    int EttTillNamn;               //Antal hopp
+    [HideInInspector]
+    public int EttTillNamn;               //Antal hopp
     public LayerMask GeDenEttNamn; //Vad är mark
     public float EttTillNyttNamn;  //Röresle, sidled
     bool InteFacingRight;          //Facing Right

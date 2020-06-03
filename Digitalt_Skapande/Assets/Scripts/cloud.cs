@@ -16,7 +16,7 @@ public class cloud : MonoBehaviour
         {
             thisRend.flipX = true;
         }
-        speed = Random.Range(0.5f,1.5f);
+        speed = Random.Range(0.3f,1.2f);
         thisRend.sortingOrder = (int)(speed * 1000);
     }
     void Update()

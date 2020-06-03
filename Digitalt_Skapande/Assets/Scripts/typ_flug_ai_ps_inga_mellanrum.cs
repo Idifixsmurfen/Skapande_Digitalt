@@ -31,9 +31,9 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
     void Update()
     {
         float speed = baseSpeed;
-        float distanceToTarget = Vector2.Distance(transform.position, target.position);
         if (target)
         {
+            float distanceToTarget = Vector2.Distance(transform.position, target.position);
             if (distanceToTarget < vision)
             {
                 direction = target.position - transform.position;
@@ -44,12 +44,12 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
             {
                 Invoke("ChangeDirection", RandomNumber);
             }
+            thisAS.volume = 1 / distanceToTarget;
         }
         else
         {
             Invoke("ChangeDirection", RandomNumber);
         }
-        thisAS.volume = 1 / distanceToTarget;
         direction.Normalize();
         direction *= baseSpeed;
         thisRB.AddForce(direction * speed * Time.deltaTime);
@@ -77,7 +77,6 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
     {
         GetComponent<Animator>().enabled = true;
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -87,19 +86,16 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
             Direction.Normalize();
             Direction *= LaunchFly;
             thisRB.velocity = Direction;
-            if (SchmackPosition.y -0.2f> transform.position.y) //;
+            if (SchmackPosition.y -0.2f> transform.position.y)
             {
                 YouDeadYet.Hellth--;
-                collision.gameObject.GetComponent<Rigidbody2D>().velocity=new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x,LaunchFrog) ;
-
+                collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, LaunchFrog);
+                collision.gameObject.GetComponent<Jumpyboi>().EttTillNamn = 1;
             }
-            else //()
+            else
             {
                 collision.gameObject.GetComponent<Helth>().Hellth--;
-                
             }
-
         }
     }
-
 }

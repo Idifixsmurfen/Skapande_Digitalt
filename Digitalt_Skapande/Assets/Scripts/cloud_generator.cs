@@ -21,7 +21,7 @@ public class cloud_generator : MonoBehaviour
     {
         Vector2 startPosition;
         startPosition.x = -10;
-        startPosition.y = Random.Range(-1f, 6f);
+        startPosition.y = -Mathf.Pow(Random.Range(0, 3f), 2) + 5;
         Transform newCloud = Instantiate(cloud, transform.position, Quaternion.identity).transform;
         newCloud.parent = transform;
         newCloud.localPosition = startPosition;
@@ -34,7 +34,7 @@ public class cloud_generator : MonoBehaviour
         {
             Vector2 startPosition;
             startPosition.x = Random.Range(-11f, 11f); ;
-            startPosition.y = Mathf.Pow(Random.Range(0, 3f),2) - 3;
+            startPosition.y = -Mathf.Pow(Random.Range(0, 3f),2) + 5;
             Transform newCloud = Instantiate(cloud, transform.position, Quaternion.identity).transform;
             newCloud.parent = transform;
             newCloud.localPosition = startPosition; 
