@@ -963,36 +963,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795671641}
   m_CullTransparentMesh: 0
---- !u!1 &1047838779
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!114 &1301674737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 985087234380104215, guid: a7817628e0cc68c488db3b705431507b,
+    type: 3}
+  m_PrefabInstance: {fileID: 131747471}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1047838780}
-  m_Layer: 0
-  m_Name: Manager_Bob
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1047838780
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047838779}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 566.31134, y: 323.334, z: -16411.375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0611815551bc3c045ab0874f6fe1fa68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499798713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,7 +1498,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2096909585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1301674737}
+        m_MethodName: ChangePlaces
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: level_select
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &2096909587
 CanvasRenderer:
   m_ObjectHideFlags: 0

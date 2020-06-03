@@ -5,15 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class CEO_Bob_Bobson : MonoBehaviour
 {
-    public static void ChangePlaces(string scenename) 
+    public static CEO_Bob_Bobson ceo;
+    private void Awake()
+    {
+        ceo = this;
+    }
+    public void ChangePlaces(string scenename) 
     {
         SceneManager.LoadScene(scenename);
-
     }
-    public static void YouKindaBadTho()
+    public void YouKindaBadTho()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
     }
-
+    public void quit()
+    {
+        Application.Quit();
+    }
 }

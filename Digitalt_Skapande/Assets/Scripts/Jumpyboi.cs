@@ -12,7 +12,8 @@ public class Jumpyboi : MonoBehaviour
     public LayerMask GeDenEttNamn; //Vad är mark
     public float EttTillNyttNamn;  //Röresle, sidled
     bool InteFacingRight;          //Facing Right
-        
+    bool grounded;
+    
     void Start()
     {
         
@@ -20,10 +21,16 @@ public class Jumpyboi : MonoBehaviour
     void Update()
     {
         flip();
+        grounded = false;
         if (Physics2D.OverlapCircle(new Vector3(0,-1,0)+transform.position,0.2f,GeDenEttNamn)&&SkrivEttNamn.velocity.y<=1)
         {
             EttTillNamn = 2;
+            grounded = true;
 
+        }
+        if (!grounded && EttTillNamn > 1)
+        {
+            EttTillNamn = 1;
         }
         if ((Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.W)) && EttTillNamn>0) 
         {
@@ -31,7 +38,10 @@ public class Jumpyboi : MonoBehaviour
             EttTillNamn--;
 
         }
-        SkrivEttNamn.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * EttTillNyttNamn, SkrivEttNamn.velocity.y);
+        if (grounded || Input.GetAxisRaw("Horizontal") != 0)
+        {
+            SkrivEttNamn.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * EttTillNyttNamn, SkrivEttNamn.velocity.y);
+        }
     }
     void flip()
     {

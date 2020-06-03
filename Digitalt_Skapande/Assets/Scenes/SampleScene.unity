@@ -704,6 +704,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23175c9cdfe2ba44ac1c2be32fe222d, type: 3}
+--- !u!1 &630069875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3055912844965645953, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3055912845493496809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &630069876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630069875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160ec3ca1b3bf3a47bc53037c0735ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounce: 35
 --- !u!1001 &685155036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1679,20 +1698,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3055912844965645952, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055912844965645952, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 025d04107d4f2fa4ea7d4197b436ad6a, type: 2}
     - target: {fileID: 3055912844965645953, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
         type: 3}
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 3055912844965645953, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3055912844965645954, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.596537
+      value: 19.28
       objectReference: {fileID: 0}
     - target: {fileID: 3055912844965645954, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.563928
+      value: -4.29
       objectReference: {fileID: 0}
     - target: {fileID: 3055912844965645954, guid: 7d939f7995dce7c42b4d4a49ebdd7ea2,
         type: 3}
@@ -1820,12 +1854,12 @@ PrefabInstance:
     - target: {fileID: 5070975544149248370, guid: a23175c9cdfe2ba44ac1c2be32fe222d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 5070975544149248370, guid: a23175c9cdfe2ba44ac1c2be32fe222d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.07
+      value: -29.33
       objectReference: {fileID: 0}
     - target: {fileID: 5070975544149248370, guid: a23175c9cdfe2ba44ac1c2be32fe222d,
         type: 3}
@@ -1875,17 +1909,12 @@ PrefabInstance:
     - target: {fileID: 5070975544149248370, guid: a23175c9cdfe2ba44ac1c2be32fe222d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 16.26023
+      value: 10.385779
       objectReference: {fileID: 0}
     - target: {fileID: 5070975544149248370, guid: a23175c9cdfe2ba44ac1c2be32fe222d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3141847
-      objectReference: {fileID: 0}
-    - target: {fileID: 5070975544149248372, guid: a23175c9cdfe2ba44ac1c2be32fe222d,
-        type: 3}
-      propertyPath: m_Material
-      value: 
+      value: 9.219904
       objectReference: {fileID: 0}
     - target: {fileID: 5070975544149248373, guid: a23175c9cdfe2ba44ac1c2be32fe222d,
         type: 3}
@@ -1905,6 +1934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sound Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019769281934286672, guid: a7817628e0cc68c488db3b705431507b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7019769281934286675, guid: a7817628e0cc68c488db3b705431507b,
         type: 3}

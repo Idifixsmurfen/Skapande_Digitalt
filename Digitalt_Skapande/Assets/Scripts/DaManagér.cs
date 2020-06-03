@@ -12,16 +12,11 @@ public class DaManagér : MonoBehaviour
             Frog = GameObject.Find("Frog");
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (!Frog&&Input.anyKey) 
         {
-            CEO_Bob_Bobson.YouKindaBadTho();
-        
+            CEO_Bob_Bobson.ceo.YouKindaBadTho();
         }   
     }
-
-    
 }

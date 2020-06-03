@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaunchFly: 10
   LaunchFrog: 20
-  vision: 6.9
+  vision: 7.5
   baseSpeed: 15
 --- !u!95 &947716169416281977
 Animator:

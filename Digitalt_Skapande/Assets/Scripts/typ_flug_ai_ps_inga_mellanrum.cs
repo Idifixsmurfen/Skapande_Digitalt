@@ -81,7 +81,7 @@ public class typ_flug_ai_ps_inga_mellanrum : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Vector2 SchmackPosition = collision.GetContact(0).point;
+            Vector2 SchmackPosition = collision.transform.position;
             Vector2 Direction =(Vector2) transform.position - SchmackPosition;
             Direction.Normalize();
             Direction *= LaunchFly;
