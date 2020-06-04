@@ -1,2 +1,2 @@
 # Skapande_Digitalt
-Mediokesrt spel
+Mediokert spel
