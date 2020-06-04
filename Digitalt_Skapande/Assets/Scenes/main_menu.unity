@@ -271,6 +271,16 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 8eac85335987a8a46a03a2bc460aebfe, type: 3}
+    - target: {fileID: 7019769282981596323, guid: a7817628e0cc68c488db3b705431507b,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019769282981596323, guid: a7817628e0cc68c488db3b705431507b,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7817628e0cc68c488db3b705431507b, type: 3}
 --- !u!1 &326243680
@@ -737,7 +747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -64.785}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -383, y: -196}
+  m_AnchoredPosition: {x: -378, y: -189.9}
   m_SizeDelta: {x: 503, y: 154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741729069
