@@ -25,9 +25,13 @@ public class DaManagér : MonoBehaviour
         {
             YouKindaBadTho();
         }
-        if (GameObject.FindGameObjectsWithTag("bois").Length == 0 && levelID > levelmanager.clearedLevels)
+        if (GameObject.FindGameObjectsWithTag("bois").Length == 0 && Input.anyKey)
         {
-            levelmanager.clearedLevels = GameObject.FindGameObjectsWithTag("bois").Length;
+            if (levelID > levelmanager.clearedLevels)
+            {
+                levelmanager.clearedLevels = levelID;
+            }
+            
             goBack();
         }
     }

@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class music_transitions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    AudioClip[] clips;
+    AudioSource source;
+    public int desiredMusic;
+    void Awake()
     {
-        
+        source = GetComponent<AudioSource>();
+        InvokeRepeating("transition", 5.647f, 5.647f);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+       
+    }
+    void transition()
+    {
+        if (source.clip != clips[desiredMusic])
+        {
+            source.clip = clips[desiredMusic];
+            source.Play();
+        }
     }
 }
