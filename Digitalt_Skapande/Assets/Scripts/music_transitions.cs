@@ -1,27 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class music_transitions : MonoBehaviour
 {
     [SerializeField]
     AudioClip[] clips;
     AudioSource source;
-    public int desiredMusic;
-    void Awake()
+    public int desiredClip;
+    void Start()
     {
         source = GetComponent<AudioSource>();
-        InvokeRepeating("transition", 5.647f, 5.647f);
+        
     }
     void Update()
     {
-       
-    }
-    void transition()
-    {
-        if (source.clip != clips[desiredMusic])
+        if (SceneManager.GetActiveScene().buildIndex > 1)
         {
-            source.clip = clips[desiredMusic];
+            if (GameObject.Find("Frog") != null)
+            {
+                desiredClip = 1;
+                if (GameObject.Find("Frog").GetComponent<Helth>().Hellth <= 1)
+                {
+                    desiredClip = 2;
+                }
+            }
+            else
+            {
+                desiredClip = 2;
+            }
+        }
+        else
+        {
+            desiredClip = 0;
+        }
+        if (!source.isPlaying)
+        {
+            source.clip = clips[desiredClip];
             source.Play();
         }
     }
